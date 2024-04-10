@@ -1,12 +1,51 @@
-# satellite-cloud-segmentation
+# Cloud Segmentation Using Satellite Images
 
-Dataset URL: https://www.kaggle.com/datasets/sorour/38cloud-cloud-segmentation-in-satellite-images
+This project focuses on cloud segmentation in satellite images and includes implementations using the fastai library for a UNet model with a ResNet18 backbone and a UNet model with a ResNet34 backbone.
 
-Cloud Segmentation using satellite images done and discussed using fast.ai approach and UNet+ResNet approach:
+---
 
-Fast.ai: 
-The project is related to image segmentation and uses the fastai library for training a UNet model with a ResNet18 backbone.
-Exploratory data analysis (EDA) is performed on the image dataset, including visualizing the class distribution and the number of labels per image. The code also includes functions for converting masks from/to run-length encoding (RLE) format. Next, I have defined the data pipeline for training the model. It loads the image and mask data, applies data augmentation, and creates a data bunch for training. The model is trained using the UNet architecture with a ResNet18 backbone and binary cross-entropy loss. The training process includes finding an optimal learning rate, fitting the model to the data, and saving the best model based on the dice metric. After the initial training, the code unfreezes the model and performs further fine-tuning with larger images. The process includes adjusting the learning rate and fitting the model to the data again. The best model is saved based on the dice metric.
+## Dataset
+- Dataset URL: [38-Cloud: Cloud Segmentation in Satellite Images](https://www.kaggle.com/datasets/sorour/38cloud-cloud-segmentation-in-satellite-images)
 
-UNet+ResNet:
-In this project, image segmentation using a UNet model and ResNet34. The file includes importing necessary libraries, reading in data, preprocessing, modeling, training, and evaluation. The data is split into training and validation subsets, and a data loader is created for each subset. The UNet model is defined with a double convolution function and an expansive path. The ResNet34 model is modified to accept a custom number of channels. The model is trained using cross-entropy loss and Adam optimizer, and accuracy is used as a metric. The training and validation loss and accuracy are plotted over epochs. Finally, the model is evaluated using a batch of data, and the input, ground truth, and predicted masks are displayed.
+---
+
+## Fast.ai Approach
+- The project uses the fastai library for training a UNet model with a ResNet18 backbone.
+- Exploratory Data Analysis (EDA) is performed on the image dataset, including visualizing the class distribution and the number of labels per image.
+- Functions for converting masks from/to run-length encoding (RLE) format are included.
+- The data pipeline for training the model is defined, including data loading, augmentation, and creating a data bunch for training.
+- The model is trained with binary cross-entropy loss, and the training process includes finding an optimal learning rate and saving the best model based on the dice metric.
+- After initial training, the model is fine-tuned with larger images, adjusting the learning rate, and saving the best model.
+
+---
+
+## UNet+ResNet Approach
+- This project uses a UNet model with a ResNet34 backbone for cloud segmentation.
+- The code includes importing necessary libraries, data reading, preprocessing, modeling, training, and evaluation.
+- Data is split into training and validation subsets, and data loaders are created for each subset.
+- The UNet model is defined with a double convolution function and an expansive path, and ResNet34 is modified to accept a custom number of channels.
+- Training is performed using cross-entropy loss and Adam optimizer, with accuracy as a metric.
+- Training and validation loss and accuracy are plotted over epochs, and the model is evaluated using a batch of data.
+
+---
+
+## Usage
+1. Download the dataset from the provided URL and extract it to a suitable location.
+2. Install the required dependencies listed in `requirements.txt`.
+3. Run the Jupyter notebooks or Python scripts provided in the repository to train and evaluate the models.
+4. Optionally, modify the hyperparameters, model architectures, or data augmentation techniques to experiment with different configurations.
+
+---
+
+## Dependencies
+- Python 3.x
+- fastai
+- PyTorch
+- Pandas
+- Matplotlib
+- NumPy
+- scikit-learn
+- tqdm
+
+---
+
